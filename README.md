@@ -11,4 +11,6 @@ de VS Code.
 
 - `index.html`: contenido de la pagina.
 - `styles.css`: diseno y version responsive.
-- `assets/fondo-paranonna.png`: imagen de fondo.
+- `assets/background/fondo-paranonna.png`: imagen de fondo.
+- `assets/fonts/`: tipografias auto-alojadas (Playfair Display y Cormorant Garamond).
+- `assets/icons/`: logo e imagotipo.
