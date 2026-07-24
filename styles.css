@@ -107,24 +107,11 @@ a {
   height: auto;
 }
 
-.cart {
-  display: grid;
-  padding: 8px;
-  border: 0;
-  background: none;
-  color: inherit;
-  cursor: pointer;
-  place-items: center;
-  transition: opacity 160ms ease;
-}
-
-.topbar__logo:hover,
-.cart:hover {
+.topbar__logo:hover {
   opacity: 0.6;
 }
 
-.topbar__logo:focus-visible,
-.cart:focus-visible {
+.topbar__logo:focus-visible {
   outline: 2px solid var(--rose);
   outline-offset: 4px;
 }
