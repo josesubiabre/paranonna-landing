@@ -65,37 +65,6 @@
             height="215"
           />
         </a>
-
-        <button
-          type="button"
-          class="topbar__menu-button nonna-icon"
-          aria-label="Abrir menú"
-          aria-controls="topbar-menu"
-          aria-expanded="false"
-        >
-          <svg viewBox="0 0 240 120" aria-hidden="true">
-            <circle cx="75" cy="62" r="34" class="glasses" />
-            <circle cx="165" cy="62" r="34" class="glasses" />
-            <path d="M109 58 Q120 50 131 58" class="glasses" />
-            <path d="M41 61 H27 M199 61 H213" class="glasses" />
-            <path d="M106 91 Q120 104 134 91" class="glasses" />
-            <path
-              d="M145 64 Q165 78 185 64"
-              class="wink"
-            />
-          </svg>
-        </button>
-
-        <div
-          id="topbar-menu"
-          class="topbar__menu-panel"
-          data-open="false"
-          aria-hidden="true"
-        >
-          <a href="https://www.instagram.com/paranonna.cl/" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://www.facebook.com/paranonna?locale=es_LA" target="_blank" rel="noreferrer">Facebook</a>
-          <a href="#brand-name">Inicio</a>
-        </div>
       </header>
 
       <section class="hero__content" aria-labelledby="brand-name">
@@ -155,46 +124,5 @@
         </nav>
       </footer>
     </main>
-
-    <script>
-      const menuButton = document.querySelector('.topbar__menu-button');
-      const menuPanel = document.getElementById('topbar-menu');
-      let hasWinkedHover = false;
-
-      function resetWink() {
-        menuButton.classList.remove('nonna-icon--winking');
-      }
-
-      function triggerWink() {
-        menuButton.classList.add('nonna-icon--winking');
-        window.setTimeout(resetWink, 450);
-      }
-
-      function setMenuState(open) {
-        menuPanel.setAttribute('data-open', open ? 'true' : 'false');
-        menuPanel.setAttribute('aria-hidden', open ? 'false' : 'true');
-        menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
-      }
-
-      function toggleMenu() {
-        const isOpen = menuPanel.getAttribute('data-open') === 'true';
-        setMenuState(!isOpen);
-      }
-
-      if (menuButton && menuPanel) {
-        menuButton.addEventListener('click', (event) => {
-          event.preventDefault();
-          triggerWink();
-          window.setTimeout(toggleMenu, 450);
-        });
-
-        menuButton.addEventListener('pointerenter', () => {
-          if (!hasWinkedHover) {
-            hasWinkedHover = true;
-            triggerWink();
-          }
-        });
-      }
-    </script>
   </body>
 </html>
