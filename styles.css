@@ -355,3 +355,52 @@ h1 {
     }
   }
 }
+
+/* ---------- Guiño del logo ---------- */
+
+.topbar__logo {
+  position: relative;
+}
+
+.logo-wink {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.logo-wink__lid {
+  fill: none;
+  stroke: #3b3735;
+  stroke-width: 8;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.topbar__logo.is-winking .logo-wink__lid {
+  animation: logo-wink 600ms ease-in-out;
+}
+
+@keyframes logo-wink {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scaleY(0.3);
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar__logo.is-winking .logo-wink__lid {
+    animation: none;
+    opacity: 1;
+  }
+}
